@@ -4,6 +4,8 @@ const express = require("express");
 const cookieParser = require("cookie-parser");
 
 const authRoutes = require("./routes/authRoutes.js");
+const userRoutes = require("./routes/userRoutes.js");
+const itemRoutes = require("./routes/itemRoutes");
 
 const URI = process.env.MONGO_URI;
 const PORT = 3000;
@@ -55,3 +57,5 @@ mongoose
   });
 
 app.use("/api/auth", authRoutes);
+app.use("/api/users", userRoutes);
+app.use("/api/items", itemRoutes);
